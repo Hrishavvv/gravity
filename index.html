@@ -32,6 +32,12 @@
     <div id="velocity"></div>
 
     <script>
+
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.write("Sorry, this isn't available on mobile");
+    window.stop();
+}
+
         const canvas = document.getElementById('blackHoleCanvas');
         const ctx = canvas.getContext('2d');
         const velocityDisplay = document.getElementById('velocity');
