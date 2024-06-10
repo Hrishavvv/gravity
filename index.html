@@ -33,9 +33,27 @@
 
     <script>
 
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    document.write("Sorry, this isn't available on mobile");
-    window.stop();
+        if (window.innerWidth < 768 || window.innerHeight < 768) {
+    var overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'rgba(0, 0, 0, 0.8)';
+    overlay.style.zIndex = '9999';
+    overlay.style.display = 'flex';
+    overlay.style.justifyContent = 'center';
+    overlay.style.alignItems = 'center';
+    
+    var message = document.createElement('div');
+    message.textContent = "Sorry, this isn't available for mobile";
+    message.style.color = '#fff';
+    message.style.fontSize = '24px';
+    message.style.textAlign = 'center';
+
+    overlay.appendChild(message);
+    document.body.appendChild(overlay);
 }
 
         const canvas = document.getElementById('blackHoleCanvas');
