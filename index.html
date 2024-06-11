@@ -33,29 +33,6 @@
 
     <script>
 
-        if (window.innerWidth < 768 || window.innerHeight < 768) {
-    var overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0, 0, 0, 0.8)';
-    overlay.style.zIndex = '9999';
-    overlay.style.display = 'flex';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-    
-    var message = document.createElement('div');
-    message.textContent = "Sorry, this isn't available for mobile";
-    message.style.color = '#fff';
-    message.style.fontSize = '24px';
-    message.style.textAlign = 'center';
-
-    overlay.appendChild(message);
-    document.body.appendChild(overlay);
-}
-
         const canvas = document.getElementById('blackHoleCanvas');
         const ctx = canvas.getContext('2d');
         const velocityDisplay = document.getElementById('velocity');
